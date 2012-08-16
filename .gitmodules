@@ -1,0 +1,12 @@
+[submodule ".vim/bundle/a.vim"]
+	path = .vim/bundle/a.vim
+	url = git://github.com/vim-scripts/a.vim.git
+[submodule ".vim/bundle/ctrp.vim"]
+	path = .vim/bundle/ctrp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
