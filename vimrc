@@ -52,6 +52,10 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <C-N> :NERDTreeToggle<CR>
 
+" python-mode
+let g:pymode_lint_ignore = "E251"
+let g:pymode_lint_ignore = "E401"
+
 syntax enable
 set background=dark
 let g:solarized_termtrans = 1
