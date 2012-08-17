@@ -10,10 +10,11 @@ dotfiles = join(home, '.dotfiles')
 def die_with_usage():
     print 'Usage examples :'
     print
-    print './%s all' % __file__
+    print '%s all' % __file__
     print ' -> will replace all your dotfiles'
-    print './%s vim bashrc' % __file__
+    print '%s vim bashrc' % __file__
     print ' -> will only replace your .vim and .bashrc'
+    sys.exit()
 
 if __name__ == '__main__':
 
@@ -21,6 +22,9 @@ if __name__ == '__main__':
 
     if 'all' in to_install:
         to_install = all_files
+
+    if not to_install:
+        die_with_usage()
 
     print 'Thoses files/directories will be replaced:'
     for f in to_install:
