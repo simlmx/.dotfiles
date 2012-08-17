@@ -2,11 +2,25 @@
 import sys, os, shutil
 from os.path import join, isdir, islink, exists
 
-to_install = 'vimrc bashrc vim profile'.split()
+all_files = 'vimrc bashrc vim profile'.split()
 home = os.getenv('HOME')
 dotfiles = join(home, '.dotfiles')
 
+
+def die_with_usage():
+    print 'Usage examples :'
+    print
+    print './%s all' % __file__
+    print ' -> will replace all your dotfiles'
+    print './%s vim bashrc' % __file__
+    print ' -> will only replace your .vim and .bashrc'
+
 if __name__ == '__main__':
+
+    to_install = sys.argv[1:]
+
+    if 'all' in to_install:
+        to_install = all_files
 
     print 'Thoses files/directories will be replaced:'
     for f in to_install:
