@@ -53,8 +53,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap <C-N> :NERDTreeToggle<CR>
 
 " python-mode
+let g:pymode_lint_cwindow = 0
 let g:pymode_lint_ignore = "E251"
 let g:pymode_lint_ignore = "E401"
+let g:pymode_lint_ignore = "E501"
 
 syntax enable
 set background=dark
