@@ -1,3 +1,61 @@
+"
+" MY STUFF
+"
+
+" pathogen
+call pathogen#infect()
+
+
+:set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+" coffee
+filetype plugin indent on
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtabstop=4
+
+" code completion?
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
+set number
+set gfn=Monaco:h14
+" sauf que ca en haut jveux pas ca juste pour la programmation?? en tous cas..
+
+" sage
+au BufNewFile,BufRead *.sage set filetype=python
+
+" Pour shift-left, shift-right
+"if has("gui_macvim")
+"    let macvim_hig_shift_movement = 1
+"endif
+"
+
+" If the current buffer has never been saved, it will have no name,
+" " call the file browser to save it, otherwise just save it.
+nnoremap <silent> <F2> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
+imap <F2> <c-o><F2>
+
+" bash like <tab>
+set wildmode=longest,list
+set wildmenu
+
+set clipboard=unnamed
+
+set wildignore+=*/workspace/platform/build/*
+set wildignore+=*.so,*.swp,*.zip
+set wildignore+=*/rtb/experiment/results/*
+
+" CTRL P
+nmap <C-b> :CtrlPBuffer<CR>
+
+" NERD tree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nmap <C-N> :NERDTreeToggle<CR>
+
+syntax enable
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 "
 " An example for a vimrc file.
@@ -97,61 +155,3 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-"
-" MY STUFF
-"
-
-" pathogen
-call pathogen#infect()
-
-
-:set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-
-" coffee
-filetype plugin indent on
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtabstop=4
-
-" code completion?
-filetype plugin on
-set ofu=syntaxcomplete#Complete
-
-set number
-set gfn=Monaco:h14
-" sauf que ca en haut jveux pas ca juste pour la programmation?? en tous cas..
-
-" sage
-au BufNewFile,BufRead *.sage set filetype=python
-
-" Pour shift-left, shift-right
-"if has("gui_macvim")
-"    let macvim_hig_shift_movement = 1
-"endif
-"
-
-" If the current buffer has never been saved, it will have no name,
-" " call the file browser to save it, otherwise just save it.
-nnoremap <silent> <F2> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
-imap <F2> <c-o><F2>
-
-" bash like <tab>
-set wildmode=longest,list
-set wildmenu
-
-set clipboard=unnamed
-
-set wildignore+=*/workspace/platform/build/*
-set wildignore+=*.so,*.swp,*.zip
-set wildignore+=*/rtb/experiment/results/*
-
-" CTRL P
-nmap <C-b> :CtrlPBuffer<CR>
-
-" NERD tree
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap <C-N> :NERDTreeToggle<CR>
-
-syntax enable
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
