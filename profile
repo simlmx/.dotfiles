@@ -33,4 +33,6 @@ fi
 PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig/
 
 # customizations
-source .bash_custom
+if [ -f .bash_custom ] ; then
+    source .bash_custom
+fi

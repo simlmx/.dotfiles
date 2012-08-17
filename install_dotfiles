@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import sys, os, shutil
-from os.path import join, isdir, islink
+from os.path import join, isdir, islink, exists
 
-to_install = '.vimrc .bashrc .vim .profile'.split()
+to_install = 'vimrc bashrc vim profile'.split()
 home = os.getenv('HOME')
 dotfiles = join(home, '.dotfiles')
 
@@ -10,24 +10,25 @@ if __name__ == '__main__':
 
     print 'Thoses files/directories will be replaced:'
     for f in to_install:
-        print '    ' + f
+        print '    .%s' % f
 
     choice = ''
     while choice not in ['yes', 'no']:
-        choice = raw_input('Proceed? (yes/no)')
+        choice = raw_input('Proceed? (yes/no) ')
 
     if choice == 'no':
         print 'Nothing done.'
         sys.exit()
 
     for f in to_install:
-        path = join(home, f)
-        if islink(path):
-            os.unlink(path)
-        elif isdir(path):
-            shutil.rmtree(path)
-        else: # file
-            os.remove(path)
+        path = join(home, '.' + f)
+        if exists(path):
+            if islink(path):
+                os.unlink(path)
+            elif isdir(path):
+                shutil.rmtree(path)
+            else: # file
+                os.remove(path)
 
         # create symlink
         os.symlink(join(dotfiles, f), path)
