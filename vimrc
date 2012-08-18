@@ -5,7 +5,6 @@
 " pathogen
 call pathogen#infect()
 
-
 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " coffee
@@ -17,7 +16,7 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 set number
-set gfn=Monaco:h14
+set gfn=Monaco:h16
 " sauf que ca en haut jveux pas ca juste pour la programmation?? en tous cas..
 
 " sage
@@ -31,8 +30,9 @@ au BufNewFile,BufRead *.sage set filetype=python
 
 " If the current buffer has never been saved, it will have no name,
 " " call the file browser to save it, otherwise just save it.
-nnoremap <silent> <F2> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
-imap <F2> <c-o><F2>
+imap <F2> <C-O>:update<CR>
+"nnoremap <silent> <F2> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
+"imap <F2> <c-o><F2>
 
 " bash like <tab>
 set wildmode=longest,list
@@ -58,6 +58,7 @@ let g:pymode_lint_ignore = "E251"
 let g:pymode_lint_ignore = "E401"
 let g:pymode_lint_ignore = "E501"
 
+" solarized
 syntax enable
 set background=dark
 let g:solarized_termtrans = 1
