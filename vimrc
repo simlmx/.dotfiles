@@ -10,13 +10,17 @@ call pathogen#infect()
 " coffee
 filetype plugin indent on
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtabstop=4
+au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
+
+
+
 
 " code completion?
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 set number
-set gfn=Monaco:h16
+set gfn=Monaco:h14
 " sauf que ca en haut jveux pas ca juste pour la programmation?? en tous cas..
 
 " sage
