@@ -12,9 +12,6 @@ filetype plugin indent on
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtabstop=4
 au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
-
-
-
 " code completion?
 filetype plugin on
 set ofu=syntaxcomplete#Complete
@@ -31,13 +28,10 @@ au BufNewFile,BufRead *.sage set filetype=python
 "    let macvim_hig_shift_movement = 1
 "endif
 "
-
-" If the current buffer has never been saved, it will have no name,
-" " call the file browser to save it, otherwise just save it.
-imap <F2> <C-O>:update<CR>
 "nnoremap <silent> <F2> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
 "imap <F2> <c-o><F2>
 
+nmap <F2> :w<cr>
 " bash like <tab>
 set wildmode=longest,list
 set wildmenu
