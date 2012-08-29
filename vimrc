@@ -46,15 +46,12 @@ set wildignore+=*/rtb/experiment/results/*
 nmap <C-b> :CtrlPBuffer<CR>
 
 " NERD tree
-autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <C-N> :NERDTreeToggle<CR>
 
 " python-mode
+let g:pymode_lint_ignore = "E251,E401,E501"
 let g:pymode_lint_cwindow = 0
-let g:pymode_lint_ignore = "E251"
-let g:pymode_lint_ignore = "E401"
-let g:pymode_lint_ignore = "E501"
 
 " solarized
 syntax enable
