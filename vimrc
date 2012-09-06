@@ -59,6 +59,9 @@ set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
 
+" no backup
+set nobackup
+
 "
 " An example for a vimrc file.
 "
