@@ -34,5 +34,5 @@ export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$HOME/local/lib/pkg-config/"
 
 # customizations
 if [ -f "$HOME/.bash_custom" ] ; then
-    source .bash_custom
+    source "$HOME/.bash_custom"
 fi
