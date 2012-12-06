@@ -2,7 +2,7 @@
 import sys, os, shutil
 from os.path import join, isdir, islink, lexists
 
-all_files = 'vimrc bashrc vim profile tmux.conf'.split()
+all_files = 'vimrc bashrc vim profile tmux.conf dir_colors'.split()
 home = os.getenv('HOME')
 dotfiles = join(home, '.dotfiles')
 
