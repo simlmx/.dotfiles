@@ -59,6 +59,9 @@ set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
 
+" no backup
+set nobackup
+
 "
 " An example for a vimrc file.
 "
@@ -107,6 +110,8 @@ inoremap <C-U> <C-G>u<C-U>
 if has('mouse')
   set mouse=a
 endif
+" For tmux
+set ttymouse=xterm2
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

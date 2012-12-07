@@ -30,9 +30,9 @@ if [ -d "$HOME/local/lib" ] ; then
     export LD_LIBRARY_PATH
 fi
 
-PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig/
+export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig/:$HOME/local/lib/pkg-config/"
 
 # customizations
-if [ -f .bash_custom ] ; then
-    source .bash_custom
+if [ -f "$HOME/.bash_custom" ] ; then
+    source "$HOME/.bash_custom"
 fi

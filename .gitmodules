@@ -19,3 +19,6 @@
 [submodule "vim/bundle/django.vim"]
 	path = vim/bundle/django.vim
 	url = git://github.com/vim-scripts/django.vim.git
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
+	url = git@github.com:seebi/dircolors-solarized.git
