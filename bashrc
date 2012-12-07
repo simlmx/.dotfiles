@@ -1,3 +1,7 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
 # customizations
 if [ -f "$HOME/.bash_custom" ] ; then
     source "$HOME/.bash_custom"
@@ -5,12 +9,6 @@ fi
 
 # os
 OS=`uname`
-# hack for iterm
-#bind '"\M-k":backward-kill-word'
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -43,9 +41,10 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color | xterm) color_prompt=yes;;
-esac
+#case "$TERM" in
+#    xterm-color | xterm-color256 | xterm) color_prompt=yes;;
+#esac
+color_prompt=yes
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
