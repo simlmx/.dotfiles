@@ -50,7 +50,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap <C-N> :NERDTreeToggle<CR>
 
 " python-mode
-let g:pymode_lint_ignore = "E251,E401,E501"
+let g:pymode_lint_ignore = "E251,E401,E501,E231"
 let g:pymode_lint_cwindow = 0
 
 " solarized
