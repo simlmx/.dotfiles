@@ -38,9 +38,7 @@ set wildmenu
 
 set clipboard=unnamed
 
-set wildignore+=*/workspace/platform/build/*
-set wildignore+=*.so,*.swp,*.zip
-set wildignore+=*/rtb/experiment/results/*
+set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
 " CTRL P
 nmap <C-b> :CtrlPBuffer<CR>
