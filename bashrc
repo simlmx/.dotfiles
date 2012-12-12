@@ -93,9 +93,17 @@ function _git_prompt() {
         echo -n '\[\e[0;37;'"$ansi"';1m\]'"$branch${COLOR_NONE} "
     fi
 }
+
+# Adds the "virtual env" to the prompt if we want it
+function _virtual_env_prompt() {
+    if [[ -e $VIRTUAL_ENV && -z $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+        echo "($LIGHT_GRAY${VIRTUAL_ENV##*/}$COLOR_NONE)"
+    fi
+}
+
 function _prompt_command() {
     prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}"
-    PS1="`_git_prompt`$prompt "
+    PS1="`_virtual_env_prompt``_git_prompt`$prompt "
 }
 PROMPT_COMMAND=_prompt_command
 
