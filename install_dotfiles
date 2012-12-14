@@ -2,7 +2,7 @@
 import sys, os, shutil, subprocess
 from os.path import join, isdir, islink, lexists
 
-all_files = 'vimrc bashrc vim profile'.split()
+all_files = 'vimrc bashrc vim profile tmux.conf dircolors'.split()
 home = os.getenv('HOME')
 dotfiles = join(home, '.dotfiles')
 
@@ -14,6 +14,8 @@ def die_with_usage():
     print ' -> will replace all your dotfiles'
     print '%s vim bashrc' % __file__
     print ' -> will only replace your .vim and .bashrc'
+    print
+    print 'Possible dotfiles:', ', '.join(all_files)
     sys.exit()
 
 if __name__ == '__main__':

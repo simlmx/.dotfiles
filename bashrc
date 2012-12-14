@@ -1,9 +1,14 @@
-# hack for iterm
-#bind '"\M-k":backward-kill-word'
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+
+# customizations
+if [ -f "$HOME/.bash_custom" ] ; then
+    source "$HOME/.bash_custom"
+fi
+
+# os
+OS=`uname`
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -36,9 +41,10 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color | xterm) color_prompt=yes;;
-esac
+#case "$TERM" in
+#    xterm-color | xterm-color256 | xterm) color_prompt=yes;;
+#esac
+color_prompt=yes
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -102,11 +108,18 @@ xterm*|rxvt*)
     ;;
 esac
 
+command_exists () {
+    type "$1" &> /dev/null ;
+}
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if command_exists dircolors; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    if [ $OS == "Darwin" ]; then
+        alias ls='ls -G'
+    else
+        alias ls='ls --color=auto'
+    fi
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -114,11 +127,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -140,5 +148,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-export LS_COLORS
+
+
+if command_exists dircolors; then
+    eval `dircolors ~/.dircolors`
+fi
+if command_exists fasd; then
+    eval "$(fasd --init auto)"
+fi
+
+
