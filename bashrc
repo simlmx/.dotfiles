@@ -112,21 +112,29 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
+# add homebrew coreutils to path
+GNUBIN="/usr/local/opt/coreutils/libexec/gnubin"
+if [ -d "$GNUBIN" ]; then
+    export PATH="$GNUBIN:$PATH"
+fi
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 # enable color support of ls and also add handy aliases
+if [[ $OS == "Darwin" && ! -d "$GNUBIN" ]]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 if command_exists dircolors; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    if [ $OS == "Darwin" ]; then
-        alias ls='ls -G'
-    else
-        alias ls='ls --color=auto'
-    fi
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
+eval `dircolors ~/.dircolors`
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -148,11 +156,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
-
-if command_exists dircolors; then
-    eval `dircolors ~/.dircolors`
-fi
 if command_exists fasd; then
     eval "$(fasd --init auto)"
 fi
