@@ -43,8 +43,10 @@ set wildignore+=*.so,*.swp,*.zip
 set wildignore+=*/rtb/experiment/results/*
 
 " CTRL P
-nmap <C-b> :CtrlPBuffer<CR>
+nmap <Leader>p :CtrlPBuffer<CR>
 let g:ctrlp_custom_ignore = 'build'
+let g:ctrlp_working_path_mode = ''
+
 
 " NERD tree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
