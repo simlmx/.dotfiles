@@ -62,8 +62,9 @@ set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
 
-" no backup
-set nobackup
+" ctags
+set tags=./tags;/
+"au BufWritePost *.cc,*.c,*.cpp,*.h !ctags -R &
 
 "
 " An example for a vimrc file.

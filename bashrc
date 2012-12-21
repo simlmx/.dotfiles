@@ -117,7 +117,6 @@ GNUBIN="/usr/local/opt/coreutils/libexec/gnubin"
 if [ -d "$GNUBIN" ]; then
     export PATH="$GNUBIN:$PATH"
 fi
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # enable color support of ls and also add handy aliases
 if [[ $OS == "Darwin" && ! -d "$GNUBIN" ]]; then
