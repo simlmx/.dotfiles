@@ -126,6 +126,8 @@ if [ -d "$GNUBIN" ]; then
     export PATH="$GNUBIN:$PATH"
 fi
 
+export PATH="/usr/local/share/python:$PATH"
+
 # enable color support of ls and also add handy aliases
 if [[ $OS == "Darwin" && ! -d "$GNUBIN" ]]; then
     alias ls='ls -G'
