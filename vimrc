@@ -32,6 +32,9 @@ au BufNewFile,BufRead *.sage set filetype=python
 "imap <F2> <c-o><F2>
 
 nmap <F2> :w<cr>
+" back to normal mode and save (why not)
+imap jk <esc>:w<cr>
+
 " bash like <tab>
 set wildmode=longest,list
 set wildmenu
