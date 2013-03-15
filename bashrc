@@ -101,11 +101,11 @@ function _virtual_env_prompt() {
     fi
 }
 
-export PROMPT_COLOR="\[\033[$(($RANDOM % 2));$((31 + ($RANDOM % 7)))m\]"
+#export PROMPT_COLOR="\[\033[$(($RANDOM % 2));$((31 + ($RANDOM % 7)))m\]"
 
 function _prompt_command() {
     # prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${PROMPT_COLOR}\w${COLOR_NONE}"
-    prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${PROMP_COLOR}\w${COLOR_NONE}"
+    prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}"
     PS1="`_virtual_env_prompt``_git_prompt`$prompt "
 }
 PROMPT_COMMAND=_prompt_command
