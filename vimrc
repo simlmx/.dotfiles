@@ -48,7 +48,9 @@ imap jk <esc>:w<cr>
 set wildmode=longest,list
 set wildmenu
 
-set clipboard=unnamed
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
