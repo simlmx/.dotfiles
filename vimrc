@@ -64,6 +64,9 @@ let g:ctrlp_working_path_mode = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <C-N> :NERDTreeToggle<CR>
 
+" NERD commenter
+let NERDSpaceDelims = 1
+
 " python-mode
 let g:pymode_lint_ignore = "E251,E401,E501,E231"
 let g:pymode_lint_cwindow = 0
