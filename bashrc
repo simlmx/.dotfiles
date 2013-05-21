@@ -105,7 +105,7 @@ function _virtual_env_prompt() {
 
 function _prompt_command() {
     # prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${PROMPT_COLOR}\w${COLOR_NONE}"
-    prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}"
+    prompt="${YELLOW}\u${COLOR_NONE}@${GREEN}\h${COLOR_NONE}:${BLUE}\w\n:<${COLOR_NONE}"
     PS1="`_virtual_env_prompt``_git_prompt`$prompt "
 }
 PROMPT_COMMAND=_prompt_command

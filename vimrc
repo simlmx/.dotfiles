@@ -2,6 +2,15 @@
 " MY STUFF
 "
 
+" commenting/uncommenting a block of text
+au FileType haskell,vhdl,ada let b:comment_leader = '-- '
+au FileType vim let b:comment_leader = '" '
+au FileType c,cpp,java,javascript let b:comment_leader = '// '
+au FileType sh,make,coffee,python let b:comment_leader = '# '
+au FileType tex let b:comment_leader = '% '
+noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
+noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
+
 " pathogen
 call pathogen#infect()
 
@@ -55,8 +64,11 @@ let g:ctrlp_working_path_mode = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <C-N> :NERDTreeToggle<CR>
 
+" NERD commenter
+let NERDSpaceDelims = 1
+
 " python-mode
-let g:pymode_lint_ignore = "E251,E401,E501,E231"
+let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225"
 let g:pymode_lint_cwindow = 0
 
 " solarized
