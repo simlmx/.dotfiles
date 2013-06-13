@@ -147,8 +147,8 @@ if command_exists dircolors; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-fi
 eval `dircolors ~/.dircolors`
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
