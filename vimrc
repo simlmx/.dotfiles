@@ -41,8 +41,13 @@ au BufNewFile,BufRead *.sage set filetype=python
 "imap <F2> <c-o><F2>
 
 nmap <F2> :w<cr>
+
 " back to normal mode and save (why not)
 imap jk <esc>:w<cr>
+
+" switch between tabs
+nmap <Leader>a :tabprevious<cr>
+nmap <Leader>f :tabnext<cr>
 
 " bash like <tab>
 set wildmode=longest,list
@@ -66,6 +71,7 @@ nmap <C-N> :NERDTreeToggle<CR>
 
 " NERD commenter
 let NERDSpaceDelims = 1
+let NERDUsePlaceHolders = 0
 
 " python-mode
 let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225"
