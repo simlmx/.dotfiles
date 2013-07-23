@@ -61,8 +61,11 @@ set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
 " CTRL P
 nmap <Leader>p :CtrlPBuffer<CR>
-let g:ctrlp_custom_ignore = 'build'
+" for my job
+let g:ctrlp_custom_ignore = 'build/x86_64'
 let g:ctrlp_working_path_mode = ''
+let g:ctrlp_open_multiple_files = 'h'
+
 
 
 " NERD tree
@@ -86,6 +89,12 @@ colorscheme solarized
 " ctags
 set tags=./tags;/
 "au BufWritePost *.cc,*.c,*.cpp,*.h !ctags -R &
+
+" FSwitch
+au! BufEnter *.cc,*.c let b:fswitchdst = 'h'
+au! BufEnter *.h let b:fswitchdst = 'cc,c'
+nmap <Leader>s :FSHere<CR>
+
 
 "
 " An example for a vimrc file.
