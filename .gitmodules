@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-fswitch"]
 	path = vim/bundle/vim-fswitch
 	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
