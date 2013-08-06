@@ -57,14 +57,18 @@ endif
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
+set colorcolumn=80
+
+"************************
+" plugin customizations
+"************************
+
 " CTRL P
 nmap <Leader>p :CtrlPBuffer<CR>
 " for my job
 let g:ctrlp_custom_ignore = 'build/x86_64'
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_open_multiple_files = 'h'
-
-
 
 " NERD tree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
