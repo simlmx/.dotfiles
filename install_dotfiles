@@ -1,10 +1,10 @@
 #!/usr/bin/python
 import sys, os, shutil, subprocess
-from os.path import join, isdir, islink, lexists
+from os.path import join, isdir, islink, lexists, realpath, dirname
 
 all_files = 'vimrc bashrc vim profile tmux.conf dircolors'.split()
 home = os.getenv('HOME')
-dotfiles = join(home, '.dotfiles')
+dotfiles = dirname(realpath(__file__))
 
 
 def die_with_usage():
