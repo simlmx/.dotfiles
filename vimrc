@@ -2,13 +2,6 @@
 " MY STUFF
 "
 
-" commenting/uncommenting a block of text
-au FileType haskell,vhdl,ada let b:comment_leader = '-- '
-au FileType vim let b:comment_leader = '" '
-au FileType c,cpp,java,javascript let b:comment_leader = '// '
-au FileType sh,make,coffee,python let b:comment_leader = '# '
-au FileType tex let b:comment_leader = '% '
-
 " pathogen
 call pathogen#infect()
 
