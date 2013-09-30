@@ -2,11 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# customizations
-if [ -f "$HOME/.bash_custom" ] ; then
-    source "$HOME/.bash_custom"
-fi
-
 # os
 OS=`uname`
 
@@ -172,4 +167,8 @@ if command_exists fasd; then
     alias o='a -e open'
 fi
 
+# customizations
+if [ -f "$HOME/.bash_custom" ] ; then
+    source "$HOME/.bash_custom"
+fi
 
