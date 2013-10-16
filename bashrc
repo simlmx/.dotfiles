@@ -134,7 +134,7 @@ else
     alias ls='ls --color=auto'
 fi
 
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --exclude=*~'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tmux='tmux -2'
