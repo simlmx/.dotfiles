@@ -2,8 +2,23 @@
 " MY STUFF
 "
 
+" mark.vim, pre-pathogen
+nmap <Leader>w <Plug>MarkSearchCurrentPrev
+nmap <Leader>e <Plug>MarkSearchCurrentNext
+
 " pathogen
 call pathogen#infect()
+
+" mark.vim
+" let g:mwPalettes['simon'] = [
+    " \   { 'ctermbg':'Cyan',       'ctermfg':'Black', 'guibg':'#8CCBEA', 'guifg':'Black' },
+    " \   { 'ctermbg':'Green',      'ctermfg':'Black', 'guibg':'#A4E57E', 'guifg':'Black' },
+    " \   { 'ctermbg':'Red',        'ctermfg':'Black', 'guibg':'#FF7272', 'guifg':'Black' },
+    " \   { 'ctermbg':'Magenta',    'ctermfg':'Black', 'guibg':'#FFB3FF', 'guifg':'Black' },
+    " \   { 'ctermbg':'Blue',       'ctermfg':'Black', 'guibg':'#9999FF', 'guifg':'Black' },
+" \]
+" let g:mwDefaultHighlightingPalette = 'simon'
+
 
 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
