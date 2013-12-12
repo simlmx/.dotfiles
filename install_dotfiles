@@ -2,7 +2,7 @@
 import sys, os, shutil, subprocess
 from os.path import join, isdir, islink, lexists, realpath, dirname
 
-all_files = 'vimrc bashrc vim profile tmux.conf dircolors'.split()
+all_files = 'vimrc bashrc vim profile tmux.conf dircolors bash_profile'.split()
 home = os.getenv('HOME')
 dotfiles = dirname(realpath(__file__))
 
