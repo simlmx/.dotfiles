@@ -80,7 +80,7 @@ let g:ctrlp_open_multiple_files = 'h'
 
 " NERD tree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap <C-N> :NERDTreeToggle<CR>
+" nmap <C-N> :NERDTreeToggle<CR>
 
 " NERD commenter
 let NERDSpaceDelims = 1
@@ -97,13 +97,18 @@ let g:solarized_termtrans = 1
 colorscheme solarized
 
 " ctags
-set tags=./tags;/
+" set tags=./tags;/
 "au BufWritePost *.cc,*.c,*.cpp,*.h !ctags -R &
+
+" taglist
+nnoremap <silent> <C-N> :TlistToggle<CR>
+let Tlist_WinWidth=34
 
 " FSwitch
 au! BufEnter *.cc,*.c let b:fswitchdst = 'h'
 au! BufEnter *.h let b:fswitchdst = 'cc,c'
 nmap <Leader>s :FSHere<CR>
+
 
 
 "
