@@ -118,13 +118,13 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
+export PATH="/usr/local/bin:$PATH"
+
 # add homebrew coreutils to path
 GNUBIN="/usr/local/opt/coreutils/libexec/gnubin"
 if [ -d "$GNUBIN" ]; then
     export PATH="$GNUBIN:$PATH"
 fi
-
-export PATH="/usr/local/bin:$PATH"
 
 # enable color support of ls and also add handy aliases
 if [[ $OS == "Darwin" && ! -d "$GNUBIN" ]]; then
