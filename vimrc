@@ -89,6 +89,7 @@ let NERDUsePlaceHolders = 0
 " python-mode
 let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225,E128"
 let g:pymode_lint_cwindow = 0
+set nofoldenable
 
 " solarized
 syntax enable
