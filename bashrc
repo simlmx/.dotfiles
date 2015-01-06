@@ -136,7 +136,9 @@ fi
 alias grep='grep --color=auto --exclude=*~'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias grepy='grep -r --include=*.py'
 alias tmux='tmux -2'
+
 if command_exists dircolors; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     #alias dir='dir --color=auto'
