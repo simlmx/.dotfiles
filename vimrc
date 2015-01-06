@@ -27,6 +27,13 @@ filetype plugin indent on
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtabstop=4
 au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
+" latex
+au BufNewFile,BufReadPost *.tex setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+
+"html
+au BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+au BufNewFile,BufReadPost *.css setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+
 " code completion?
 filetype plugin on
 set ofu=syntaxcomplete#Complete
@@ -87,7 +94,7 @@ let NERDSpaceDelims = 1
 let NERDUsePlaceHolders = 0
 
 " python-mode
-let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225,E128"
+let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225,E128,E127,E203"
 let g:pymode_lint_cwindow = 0
 set nofoldenable
 
