@@ -98,11 +98,14 @@ let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225,E128,E127,E203"
 let g:pymode_lint_cwindow = 0
 set nofoldenable
 
-" solarized
+" color theme
 syntax enable
 set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
+"let g:solarized_termtrans = 1
+"colorscheme solarized
+colorscheme gruvbox
+" some fix for tmux
+set t_ut=
 
 " ctags
 " set tags=./tags;/
