@@ -1,0 +1,14 @@
+[user]
+	name = <your name>
+	email = <your email address>
+[core]
+	excludesfile = /Users/simon/.gitignore_global
+[alias]
+    st = status
+    update = !git pull && git submodule update --init && git status
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    fr = !git fetch && git rebase
+[color]
+	ui = auto
+[push]
+	default = matching
