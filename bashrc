@@ -177,7 +177,7 @@ if [ -f $HOME/.profile ]; then
     source $HOME/.profile
 fi
 
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+if [ "$TERM" == "xterm" ]; then
    export TERM=xterm-256color
 fi
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
