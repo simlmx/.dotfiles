@@ -20,7 +20,7 @@ call pathogen#infect()
 " let g:mwDefaultHighlightingPalette = 'simon'
 
 
-:set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " coffee
 filetype plugin indent on
@@ -97,6 +97,7 @@ let NERDUsePlaceHolders = 0
 let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225,E128,E127,E203"
 let g:pymode_lint_cwindow = 0
 set nofoldenable
+autocmd CompleteDone * pclose
 
 " color theme
 syntax enable
@@ -194,7 +195,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -222,3 +223,5 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" use the shell's background, I need it for the transparency
+hi Normal ctermbg=none
