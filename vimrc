@@ -223,5 +223,6 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" TODO make a function for that maybe because sometimes it's horrible
 " use the shell's background, I need it for the transparency
-hi Normal ctermbg=none
+" hi Normal ctermbg=none
