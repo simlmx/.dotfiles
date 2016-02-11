@@ -74,6 +74,8 @@ set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
 set colorcolumn=80
 
+" make :W save, just like :w
+:command W w
 "************************
 " plugin customizations
 "************************
