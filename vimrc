@@ -72,7 +72,7 @@ endif
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
-set colorcolumn=80
+" set colorcolumn=80
 
 " make :W save, just like :w
 :command W w
@@ -100,6 +100,7 @@ let g:pymode_lint_ignore = "E251,E401,E501,E231,E302,E225,E128,E127,E203"
 let g:pymode_lint_cwindow = 0
 set nofoldenable
 autocmd CompleteDone * pclose
+let g:pymode_rope = 0
 
 " color theme
 syntax enable
