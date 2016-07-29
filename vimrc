@@ -31,8 +31,7 @@ au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 au BufNewFile,BufReadPost *.tex setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
 
 "html
-au BufNewFile,BufReadPost *.html setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
-au BufNewFile,BufReadPost *.css setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+au BufNewFile,BufReadPost *.{html,css,js,xml} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
 
 " code completion?
 filetype plugin on
@@ -72,7 +71,7 @@ endif
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
-" set colorcolumn=80
+set colorcolumn=80
 
 " make :W save, just like :w
 :command W w
@@ -83,7 +82,8 @@ set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 " CTRL P
 nmap <Leader>p :CtrlPBuffer<CR>
 " for my job
-let g:ctrlp_custom_ignore = 'build/x86_64'
+let g:ctrlp_user_command = 'find %s -type f | grep -v "`cat .ctrlpignore`"'
+let g:ctrlp_max_files=0
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_open_multiple_files = 'h'
 
