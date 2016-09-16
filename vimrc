@@ -81,8 +81,12 @@ set colorcolumn=80
 
 " CTRL P
 nmap <Leader>p :CtrlPBuffer<CR>
-" for my job
-let g:ctrlp_user_command = 'find %s -type f | grep -v "`if [ -f .ctrlpignore ]; then cat .ctrlpignore; fi; if [ -f ~/.ctrlpignore ]; then cat ~/.ctrlpignore; fi;`"'
+" look into .ctrlpignore files, if present
+let g:ctrlp_user_command = 'find %s -type f | grep -v 
+    \"`if [ -f .ctrlpignore ];
+    \then cat .ctrlpignore; fi;
+    \if [ -f ~/.ctrlpignore ];
+    \then cat ~/.ctrlpignore; fi;`"'
 let g:ctrlp_max_files=0
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_open_multiple_files = 'h'
