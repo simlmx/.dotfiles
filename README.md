@@ -17,3 +17,5 @@ installation
     
     # proper install
     ./install_dotfiles all
+
+    # Don't forget to update the .gitconfig file, it contains placeholders
