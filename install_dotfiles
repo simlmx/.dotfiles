@@ -53,5 +53,7 @@ if __name__ == '__main__':
 
         # create symlink
         os.symlink(join(dotfiles, f), path)
+        if f == 'gitconfig':
+            print("*** Don't forget to setup your ~/.gitconfig ***")
 
 
