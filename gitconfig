@@ -10,5 +10,3 @@
     fr = !git fetch && git rebase
 [color]
 	ui = auto
-[push]
-	default = matching
