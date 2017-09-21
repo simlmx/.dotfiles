@@ -162,6 +162,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# for mac this is where that is (at least using brew)
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 if command_exists fasd; then
     eval "$(fasd --init auto)"
     alias v='f -e vim'
@@ -193,3 +196,5 @@ then
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
 fi
+
+
