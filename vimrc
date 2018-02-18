@@ -71,7 +71,7 @@ endif
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
-set colorcolumn=80
+set colorcolumn=80,100,120
 
 " make :W save, just like :w
 :command W w
