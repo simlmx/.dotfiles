@@ -1,8 +1,8 @@
 [user]
-	name = <your name>
-	email = <your email address>
+    name =
+    email =
 [core]
-	excludesfile = /Users/simon/.gitignore_global
+	excludesfile =
 [alias]
     st = status
     update = !git pull && git submodule update --init && git status

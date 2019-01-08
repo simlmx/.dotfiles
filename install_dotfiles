@@ -3,7 +3,7 @@ import sys, os, shutil
 from os.path import join, isdir, islink, lexists, realpath, dirname
 
 all_files = ('vimrc bashrc vim profile tmux.conf dircolors bash_profile'
-            ' gitconfig ctrlpignore').split()
+            ' gitconfig ctrlpignore gitignore_global').split()
 home = os.getenv('HOME')
 dotfiles = dirname(realpath(__file__))
 
@@ -54,6 +54,6 @@ if __name__ == '__main__':
         # create symlink
         os.symlink(join(dotfiles, f), path)
         if f == 'gitconfig':
-            print("*** Don't forget to setup your ~/.gitconfig ***")
+            print("*** Don't forget to setup your ~/.gitconfig with [user] and [core] ***")
 
 
