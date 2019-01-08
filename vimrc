@@ -27,11 +27,8 @@ filetype plugin indent on
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtabstop=4
 au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
-" latex
-au BufNewFile,BufReadPost *.tex setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
-
-"html
-au BufNewFile,BufReadPost *.{html,css,js,xml} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+"html, yaml, latex
+au BufNewFile,BufReadPost *.{html,css,js,xml,yml,yaml,tex} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
 
 " code completion?
 filetype plugin on
