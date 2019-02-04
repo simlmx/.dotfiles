@@ -55,5 +55,6 @@ if __name__ == '__main__':
         os.symlink(join(dotfiles, f), path)
         if f == 'gitconfig':
             print("*** Don't forget to setup your ~/.gitconfig with [user] and [core] ***")
+            print("*** Don't forget to setup the global gitignore: git config --global core.excludesfile ~/.gitignore_global")
 
 
