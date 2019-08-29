@@ -28,7 +28,7 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtab
 au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
 "html, yaml, latex
-au BufNewFile,BufReadPost *.{html,css,js,xml,yml,yaml,tex} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+au BufNewFile,BufReadPost *.{html,css,js,xml,yml,yaml,tex,tsx,ts} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
 
 " code completion?
 filetype plugin on
@@ -68,7 +68,7 @@ endif
 
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*~
 
-set colorcolumn=80,100,120
+set colorcolumn=72,80,100,120
 
 " make :W save, just like :w
 :command W w
@@ -104,6 +104,7 @@ autocmd CompleteDone * pclose
 let g:pymode_rope = 0
 let g:pymode_options_max_line_length = 99
 let g:pymode_folding = 0
+let g:pymode_python = 'python3'
 
 
 " color theme

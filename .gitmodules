@@ -49,3 +49,6 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/vim-jsx-typescript"]
+	path = vim/bundle/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript.git
