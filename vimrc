@@ -102,7 +102,7 @@ let g:pymode_lint_cwindow = 0
 set nofoldenable
 autocmd CompleteDone * pclose
 let g:pymode_rope = 0
-let g:pymode_options_max_line_length = 99
+let g:pymode_options_max_line_length = 88
 let g:pymode_folding = 0
 let g:pymode_python = 'python3'
 

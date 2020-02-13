@@ -197,4 +197,4 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
-
+export GPG_TTY=$(tty)
