@@ -13,7 +13,7 @@ installation
     cd ~
     git clone git@github.com:simlmx/.dotfiles.git
     cd .dotfiles
-    git submodule update --init
+    git submodule update --init --recursive
     
     # proper install
     ./install_dotfiles all
