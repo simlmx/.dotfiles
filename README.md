@@ -8,6 +8,7 @@ installation
 
     # a few dependencies
     sudo apt-get install vim exuberant-ctags
+    curl https://pyenv.run | bash
 
     # cloning
     cd ~
