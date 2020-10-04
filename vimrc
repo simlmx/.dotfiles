@@ -28,11 +28,35 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=4 expandtab tabstop=4 softtab
 au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
 "html, yaml, latex
-au BufNewFile,BufReadPost *.{html,css,js,xml,yml,yaml,tex,tsx,ts} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+au BufNewFile,BufReadPost *.{html,css,js,xml,yml,yaml,tex,tsx,ts,vue} setl shiftwidth=2 expandtab tabstop=2 softtabstop=2
+
+" python
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" Black's default
+set textwidth=88
+set expandtab
+set autoindent
+set fileformat=unix
+" Remove trailing spaces on save
+autocmd BufWritePre *.py :%s/\s\+$//e
+
 
 " code completion?
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
+" code lintin
+" Fix on save
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'vue': ['prettier'],
+\   'html': ['prettier']
+\}
+nmap <Leader>j :ALEFix<cr>
+
 
 set number
 set gfn=Monaco:h14
