@@ -14,5 +14,7 @@
 	default = current
 [rerere]
 	enabled = true
+[branch]
+	sort = -committerdate
 [merge]
 	conflictstyle = diff3
