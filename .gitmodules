@@ -46,8 +46,8 @@
 [submodule "vim/bundle/indentpython.vim"]
 	path = vim/bundle/indentpython.vim
 	url = https://github.com/vim-scripts/indentpython.vim.git
-[submodule "vim/pack/git-plugins/start/ale"]
-	path = vim/pack/git-plugins/start/ale
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
 [submodule "vim/bundle/vim-vue"]
 	path = vim/bundle/vim-vue
