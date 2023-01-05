@@ -48,14 +48,36 @@ filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 " code lintin
-" Fix on save
 let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'vue': ['prettier'],
-\   'html': ['prettier']
-\}
+            \   'javascript': ['prettier', 'eslint'],
+            \   'typescript': ['prettier', 'eslint'],
+            \   'typescriptreact': ['prettier', 'eslint'],
+            \   'tsx': ['prettier', 'eslint'],
+            \   'vue': ['eslint'],
+            \   'html': ['prettier'],
+            \   'svg': ['prettier'],
+            \   'python': ['isort', 'black'],
+            \   'json': ['prettier'],
+            \   'css': ['prettier'],
+            \   'scss': ['prettier'],
+            \   'yaml': ['prettier'],
+            \   'tex': ['latexindent']
+            \}
+
+let g:ale_linters = {
+            \ 'python': ['flake8', 'mypy'],
+            \ 'json': ['jsonlint']
+            \}
+
+" ALE will use poetry if it can
+let g:ale_python_auto_poetry = 1
+
+" let g:ale_linters = {
+"             \   'python': ['isort', 'black', 'flake8']
+"             \}
+
 nmap <Leader>j :ALEFix<cr>
+nmap <Leader>t :ALENext<cr>
 
 
 set number
