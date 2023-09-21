@@ -198,6 +198,3 @@ then
 fi
 
 export GPG_TTY=$(tty)
-
-
-. /Users/simon/code/torch/install/bin/torch-activate
