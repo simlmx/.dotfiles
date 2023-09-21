@@ -13,9 +13,6 @@
 [submodule "vim/bundle/vim-mark"]
 	path = vim/bundle/vim-mark
 	url = https://github.com/Yggdroot/vim-mark.git
-[submodule "vim/bundle/taglist.vim"]
-	path = vim/bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
