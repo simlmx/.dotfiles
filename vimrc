@@ -56,7 +56,7 @@ let g:ale_fixers = {
             \   'vue': ['eslint'],
             \   'html': ['prettier'],
             \   'svg': ['prettier'],
-            \   'python': ['isort', 'black'],
+            \   'python': ['ruff', 'black'],
             \   'json': ['prettier'],
             \   'css': ['prettier'],
             \   'scss': ['prettier'],
@@ -65,12 +65,13 @@ let g:ale_fixers = {
             \}
 
 let g:ale_linters = {
-            \ 'python': ['flake8', 'mypy'],
+            \ 'python': ['ruff', 'mypy'],
             \ 'json': ['jsonlint']
             \}
 
 " ALE will use poetry if it can
 let g:ale_python_auto_poetry = 1
+let g:ale_virtualtext_cursor = 'disabled'
 
 " let g:ale_linters = {
 "             \   'python': ['isort', 'black', 'flake8']
