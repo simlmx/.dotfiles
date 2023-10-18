@@ -9,14 +9,14 @@ dotfiles = dirname(realpath(__file__))
 
 
 def die_with_usage():
-    print 'Usage examples :'
-    print
-    print '%s all' % __file__
-    print ' -> will replace all your dotfiles'
-    print '%s vim bashrc' % __file__
-    print ' -> will only replace your .vim and .bashrc'
-    print
-    print 'Possible dotfiles:', ', '.join(all_files)
+    print('Usage examples :')
+    print()
+    print('%s all' % __file__)
+    print(' -> will replace all your dotfiles')
+    print('%s vim bashrc' % __file__)
+    print(' -> will only replace your .vim and .bashrc')
+    print()
+    print('Possible dotfiles:', ', '.join(all_files))
     sys.exit()
 
 if __name__ == '__main__':
@@ -29,16 +29,16 @@ if __name__ == '__main__':
     if not to_install:
         die_with_usage()
 
-    print 'Thoses files/directories will be replaced:'
+    print('Thoses files/directories will be replaced:')
     for f in to_install:
-        print '    .%s' % f
+        print('    .%s' % f)
 
     choice = ''
     while choice not in ['yes', 'no']:
-        choice = raw_input('Proceed? (yes/no) ')
+        choice = input('Proceed? (yes/no) ')
 
     if choice == 'no':
-        print 'Nothing done.'
+        print('Nothing done.')
         sys.exit()
 
     for f in to_install:
@@ -56,5 +56,3 @@ if __name__ == '__main__':
         if f == 'gitconfig':
             print("*** Don't forget to setup your ~/.gitconfig with [user] and [core] ***")
             print("*** Don't forget to setup the global gitignore: git config --global core.excludesfile ~/.gitignore_global")
-
-
