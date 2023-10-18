@@ -1,6 +1,7 @@
 [user]
     name =
     email =
+    signingkey =
 [core]
 	excludesfile =
 [alias]
@@ -18,3 +19,7 @@
 	sort = -committerdate
 [merge]
 	conflictstyle = diff3
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
