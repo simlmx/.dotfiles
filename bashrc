@@ -198,3 +198,6 @@ then
 fi
 
 export GPG_TTY=$(tty)
+
+# vim mode for command line
+set -o vi
