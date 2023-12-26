@@ -176,10 +176,6 @@ if [ -f "$HOME/.bash_custom" ] ; then
     source "$HOME/.bash_custom"
 fi
 
-if [ -f $HOME/.profile ]; then
-    source $HOME/.profile
-fi
-
 if [ "$TERM" == "xterm" ]; then
    export TERM=xterm-256color
 fi
